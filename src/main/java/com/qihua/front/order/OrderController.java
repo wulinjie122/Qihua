@@ -15,7 +15,7 @@ import com.qihua.exception.IllegalValueException;
 import com.qihua.front.cart.CartService;
 import com.qihua.front.member.Member;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Class description goes here.
@@ -25,7 +25,7 @@ import lombok.extern.log4j.Log4j;
  * @version 1.0
  * @see
  */
-@Log4j
+@Slf4j
 @Controller
 @RequestMapping("/order")
 public class OrderController {

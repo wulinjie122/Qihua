@@ -20,9 +20,8 @@ import com.qihua.exception.MultipleObjectException;
 import com.qihua.util.DateUtils;
 import com.qihua.util.ExceptionUtils;
 import com.qihua.util.IdUtils;
-import com.qihua.util.baidu.BCSUtils;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Class description goes here.
@@ -32,7 +31,7 @@ import lombok.extern.log4j.Log4j;
  * @version 1.0
  * @see
  */
-@Log4j
+@Slf4j
 @Controller
 @RequestMapping("/console/card")
 public class CardController {
@@ -144,7 +143,7 @@ public class CardController {
 
         // FileCopyUtils.copy(meta.getBytes(), new FileOutputStream(meta.getUrl()));
 
-        BCSUtils.putObject(filename, meta.getBytes());
+        // BCSUtils.putObject(filename, meta.getBytes());
 
         count = cardService.save(meta);
       }
@@ -170,7 +169,7 @@ public class CardController {
       // String url = Constants.DEPLOY_URL + Constants.CARD_UPLOAD_DIR + upload.getFilename();
       // FileUtils.download(request, response, url);
 
-      BCSUtils.download(request, response, BCSUtils.getObject(upload.getFilename()));
+      // BCSUtils.download(request, response, BCSUtils.getObject(upload.getFilename()));
     } catch (Exception e) {
       e.printStackTrace();
     }

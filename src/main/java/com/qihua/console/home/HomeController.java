@@ -17,7 +17,7 @@ import com.qihua.common.JSONResponseBody;
 import com.qihua.util.ExceptionUtils;
 import com.qihua.util.IdUtils;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Class description goes here.
@@ -27,7 +27,7 @@ import lombok.extern.log4j.Log4j;
  * @version 1.0
  * @see
  */
-@Log4j
+@Slf4j
 @Controller
 @RequestMapping("/console/home")
 public class HomeController {

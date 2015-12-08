@@ -10,9 +10,8 @@ import java.lang.reflect.Type;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
-import org.apache.log4j.Logger;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 反射工具类.
@@ -21,7 +20,7 @@ import lombok.extern.log4j.Log4j;
  * 
  * @author calvin
  */
-@Log4j
+@Slf4j
 public class ReflectionUtils {
 
   private static final String SETTER_PREFIX = "set";
@@ -29,8 +28,6 @@ public class ReflectionUtils {
   private static final String GETTER_PREFIX = "get";
 
   private static final String CGLIB_CLASS_SEPARATOR = "$$";
-
-  private static Logger logger = Logger.getLogger(ReflectionUtils.class);
 
   public static Field[] getDeclaredFields(Class clazz) {
     Field[] fields = clazz.getDeclaredFields();
@@ -236,18 +233,18 @@ public class ReflectionUtils {
     Type genType = clazz.getGenericSuperclass();
 
     if (!(genType instanceof ParameterizedType)) {
-      logger.warn(clazz.getSimpleName() + "'s superclass not ParameterizedType");
+      log.warn(clazz.getSimpleName() + "'s superclass not ParameterizedType");
       return Object.class;
     }
 
     Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
 
     if (index >= params.length || index < 0) {
-      logger.warn("Index: " + index + ", Size of " + clazz.getSimpleName() + "'s Parameterized Type: " + params.length);
+      log.warn("Index: " + index + ", Size of " + clazz.getSimpleName() + "'s Parameterized Type: " + params.length);
       return Object.class;
     }
     if (!(params[index] instanceof Class)) {
-      logger.warn(clazz.getSimpleName() + " not set the actual class on superclass generic parameter");
+      log.warn(clazz.getSimpleName() + " not set the actual class on superclass generic parameter");
       return Object.class;
     }
 

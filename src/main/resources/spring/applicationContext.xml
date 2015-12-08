@@ -29,7 +29,7 @@
 	</bean>
 
 	<!-- 排除扫描 Controller -->
-	<context:component-scan base-package="com.palm" name-generator="com.qihua.common.CustomBeanNameGenerator">
+	<context:component-scan base-package="com.qihua" name-generator="com.qihua.common.CustomBeanNameGenerator">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
 	</context:component-scan>

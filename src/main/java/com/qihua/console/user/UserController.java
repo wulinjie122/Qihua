@@ -14,7 +14,7 @@ import com.qihua.common.Constants;
 import com.qihua.common.JSONResponseBody;
 import com.qihua.util.ExceptionUtils;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Class description goes here.
@@ -24,7 +24,7 @@ import lombok.extern.log4j.Log4j;
  * @version 1.0
  * @see
  */
-@Log4j
+@Slf4j
 @Controller
 @RequestMapping("/console/user")
 public class UserController {
