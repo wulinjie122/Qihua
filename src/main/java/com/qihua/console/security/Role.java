@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Data;
+
 /**
  * Class description goes here.
  * 
@@ -12,6 +14,7 @@ import java.util.List;
  * @version 1.0
  * @see
  */
+@Data
 public class Role implements Serializable {
 
   private Long roleId;
@@ -27,30 +30,6 @@ public class Role implements Serializable {
   public Role(Long roleId, String roleName) {
     this.roleId = roleId;
     this.roleName = roleName;
-  }
-
-  public Long getRoleId() {
-    return roleId;
-  }
-
-  public void setRoleId(Long roleId) {
-    this.roleId = roleId;
-  }
-
-  public String getRoleName() {
-    return roleName;
-  }
-
-  public void setRoleName(String roleName) {
-    this.roleName = roleName;
-  }
-
-  public List<Menu> getItems() {
-    return items;
-  }
-
-  public void setItems(List<Menu> items) {
-    this.items = items;
   }
 
   @Override

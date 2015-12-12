@@ -4,6 +4,8 @@ import com.qihua.common.BaseEntity;
 import com.qihua.common.annotation.NotNull;
 import com.qihua.common.annotation.PrimaryKey;
 
+import lombok.Data;
+
 /**
  * Class description goes here.
  * 
@@ -12,36 +14,13 @@ import com.qihua.common.annotation.PrimaryKey;
  * @version 1.0
  * @see
  */
+@Data
 public class Article extends BaseEntity {
 
-    @PrimaryKey
-    private Long articleId;
-    @NotNull
-    private int articleType;
-    private String content;
-
-    public Long getArticleId() {
-        return articleId;
-    }
-
-    public void setArticleId(Long articleId) {
-        this.articleId = articleId;
-    }
-
-    public int getArticleType() {
-        return articleType;
-    }
-
-    public void setArticleType(int articleType) {
-        this.articleType = articleType;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
+  @PrimaryKey
+  private Long articleId;
+  @NotNull
+  private int articleType;
+  private String content;
 
 }
