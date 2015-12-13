@@ -20,5 +20,4 @@
 	<Manager className="com.radiadesign.catalina.session.RedisSessionManager" host="192.168.199.183" port="6379" database="0"
 		maxInactiveInterval="60" />
 
-
 </Context>
